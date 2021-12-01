@@ -1,0 +1,85 @@
+﻿@page
+@model JLCS.SB.Sistema_de_Informacion_Bibliotecario.Pages.RegistroPenalizacion.VistaHistorialPenalizacionLibroModel
+@{
+}
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Usuario</h4>
+    
+    <hr />
+    @*<dl class="row">
+        
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Usuario.IdUsuario)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Usuario.IdUsuario)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Usuario.Nombre)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Usuario.Nombre)
+        </dd>
+        
+    </dl>*@
+</div>
+<div>
+    <table class="table" aria-describedby="tabla de penalizaciones">
+        <thead >
+            <tr>
+                <th>
+                    Seleccionar
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.Sanciones[0].IdSancion)
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.Sanciones[0].SancionInicio)
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.Sanciones[0].SancionFin)
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.Sanciones[0].IdUsuario)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Sanciones)
+            {
+            <tr>
+                <td>
+                    <form action="/" method="post">
+                        <input class="form-check-input" type="checkbox" name="name" value="@item.IdSancion" />
+                    </form>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdSancion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SancionInicio)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SancionFin)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdUsuario)
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+    
+    
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="">Edit</a> |
+    <a asp-page="../PrestamoLibros/ConsultarPrestamo">Back to List</a>
+</div>

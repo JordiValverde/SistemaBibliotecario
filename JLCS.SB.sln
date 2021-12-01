@@ -1,0 +1,165 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31613.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JLCS.SB.Sistema_de_Informacion_Bibliotecario", "JLCS.SB.Sistema_de_Informacion_Bibliotecario\JLCS.SB.Sistema_de_Informacion_Bibliotecario.csproj", "{4DEBB847-BA20-4702-AE4A-ED443E24C29D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JLCS.SB.CapaNegocio", "JLCS.SB.CapaNegocio\JLCS.SB.CapaNegocio.csproj", "{83EE8553-26AE-4B72-80DF-CDEC3F489805}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Capa de presentación", "Capa de presentación", "{4E957DAA-BE4C-49F9-BC0F-9716722B9FA9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Capa de negocio", "Capa de negocio", "{FEEDAF1B-0473-4314-898D-A2EE846E72A3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JLCS.SB.CapaDatos", "JLCS.SB.CapaDatos\JLCS.SB.CapaDatos.csproj", "{879E3C89-B502-4A2A-B6B5-B982FEE35A66}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JLCS.SB.CapaEntidad", "JLCS.SB.CapaEntidad\JLCS.SB.CapaEntidad.csproj", "{BA3F90DA-1AAC-45A1-823F-53A0A18EB8EB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Capa de Datos", "Capa de Datos", "{CA7671AE-D1D7-47B3-9B29-B6306A0BDA09}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Capa de Entidad", "Capa de Entidad", "{1D6952DE-9283-4171-AEEF-64A63774CD75}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JLCS.SB.Sistema_de_Informacion_Bibliotecario_Blazor", "JLCS.SB.Sistema_de_Informacion_Bibliotecario_Blazor\JLCS.SB.Sistema_de_Informacion_Bibliotecario_Blazor.csproj", "{ACD20E1D-71D6-4F12-9F85-7E347889B9B7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CapaNegociosTest", "CapaNegociosTest\CapaNegociosTest.csproj", "{EF68E265-FCB3-4229-918F-C130A6575914}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LibreriaIntefaces", "LibreriaIntefaces", "{222E735C-EDCE-423C-99B8-3EC7465583A7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibreriaInterfaces", "LibreriaInterfaces\LibreriaInterfaces.csproj", "{8157CC8E-5511-4DF5-AD36-A4D4CA492FB5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommandInterface", "CommandInterface\CommandInterface.csproj", "{1EEB6D79-28F6-4745-81B2-680ABB39248F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Aplicacion de Escritorio", "Aplicacion de Escritorio", "{73456410-20D5-4522-AF2E-5276CFE8C9A7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Servicio en background", "Servicio en background", "{B1DBBEA4-54B8-4125-A36E-FBDADB2317AD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RestAPI", "RestAPI", "{9CCF7D70-22D6-47F3-AB64-07BA3B7CF86D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Desktop", "Desktop\Desktop.csproj", "{90167A15-AC75-49F9-B864-B0D47240FAAA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiciosBackground", "ServiciosBackground\ServiciosBackground.csproj", "{349AFA91-3C4E-4DDD-B60F-80334E9BB3B4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API LIbros", "API LIbros\API LIbros.csproj", "{C5FF7176-E810-4AD6-9724-499E992B9628}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4DEBB847-BA20-4702-AE4A-ED443E24C29D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DEBB847-BA20-4702-AE4A-ED443E24C29D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DEBB847-BA20-4702-AE4A-ED443E24C29D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DEBB847-BA20-4702-AE4A-ED443E24C29D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83EE8553-26AE-4B72-80DF-CDEC3F489805}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83EE8553-26AE-4B72-80DF-CDEC3F489805}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83EE8553-26AE-4B72-80DF-CDEC3F489805}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83EE8553-26AE-4B72-80DF-CDEC3F489805}.Release|Any CPU.Build.0 = Release|Any CPU
+		{879E3C89-B502-4A2A-B6B5-B982FEE35A66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{879E3C89-B502-4A2A-B6B5-B982FEE35A66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{879E3C89-B502-4A2A-B6B5-B982FEE35A66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{879E3C89-B502-4A2A-B6B5-B982FEE35A66}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA3F90DA-1AAC-45A1-823F-53A0A18EB8EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA3F90DA-1AAC-45A1-823F-53A0A18EB8EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA3F90DA-1AAC-45A1-823F-53A0A18EB8EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA3F90DA-1AAC-45A1-823F-53A0A18EB8EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACD20E1D-71D6-4F12-9F85-7E347889B9B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACD20E1D-71D6-4F12-9F85-7E347889B9B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACD20E1D-71D6-4F12-9F85-7E347889B9B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACD20E1D-71D6-4F12-9F85-7E347889B9B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF68E265-FCB3-4229-918F-C130A6575914}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF68E265-FCB3-4229-918F-C130A6575914}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF68E265-FCB3-4229-918F-C130A6575914}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF68E265-FCB3-4229-918F-C130A6575914}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8157CC8E-5511-4DF5-AD36-A4D4CA492FB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8157CC8E-5511-4DF5-AD36-A4D4CA492FB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8157CC8E-5511-4DF5-AD36-A4D4CA492FB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8157CC8E-5511-4DF5-AD36-A4D4CA492FB5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1EEB6D79-28F6-4745-81B2-680ABB39248F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EEB6D79-28F6-4745-81B2-680ABB39248F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EEB6D79-28F6-4745-81B2-680ABB39248F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EEB6D79-28F6-4745-81B2-680ABB39248F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90167A15-AC75-49F9-B864-B0D47240FAAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90167A15-AC75-49F9-B864-B0D47240FAAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90167A15-AC75-49F9-B864-B0D47240FAAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90167A15-AC75-49F9-B864-B0D47240FAAA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{349AFA91-3C4E-4DDD-B60F-80334E9BB3B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{349AFA91-3C4E-4DDD-B60F-80334E9BB3B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{349AFA91-3C4E-4DDD-B60F-80334E9BB3B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{349AFA91-3C4E-4DDD-B60F-80334E9BB3B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5FF7176-E810-4AD6-9724-499E992B9628}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5FF7176-E810-4AD6-9724-499E992B9628}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5FF7176-E810-4AD6-9724-499E992B9628}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5FF7176-E810-4AD6-9724-499E992B9628}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4DEBB847-BA20-4702-AE4A-ED443E24C29D} = {4E957DAA-BE4C-49F9-BC0F-9716722B9FA9}
+		{83EE8553-26AE-4B72-80DF-CDEC3F489805} = {FEEDAF1B-0473-4314-898D-A2EE846E72A3}
+		{879E3C89-B502-4A2A-B6B5-B982FEE35A66} = {CA7671AE-D1D7-47B3-9B29-B6306A0BDA09}
+		{BA3F90DA-1AAC-45A1-823F-53A0A18EB8EB} = {1D6952DE-9283-4171-AEEF-64A63774CD75}
+		{ACD20E1D-71D6-4F12-9F85-7E347889B9B7} = {4E957DAA-BE4C-49F9-BC0F-9716722B9FA9}
+		{EF68E265-FCB3-4229-918F-C130A6575914} = {FEEDAF1B-0473-4314-898D-A2EE846E72A3}
+		{222E735C-EDCE-423C-99B8-3EC7465583A7} = {FEEDAF1B-0473-4314-898D-A2EE846E72A3}
+		{8157CC8E-5511-4DF5-AD36-A4D4CA492FB5} = {222E735C-EDCE-423C-99B8-3EC7465583A7}
+		{1EEB6D79-28F6-4745-81B2-680ABB39248F} = {222E735C-EDCE-423C-99B8-3EC7465583A7}
+		{90167A15-AC75-49F9-B864-B0D47240FAAA} = {73456410-20D5-4522-AF2E-5276CFE8C9A7}
+		{349AFA91-3C4E-4DDD-B60F-80334E9BB3B4} = {B1DBBEA4-54B8-4125-A36E-FBDADB2317AD}
+		{C5FF7176-E810-4AD6-9724-499E992B9628} = {9CCF7D70-22D6-47F3-AB64-07BA3B7CF86D}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9C6F7143-E2C3-46B3-AA80-E5AF0BE0A7EB}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 12
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://dev.azure.com/jordivalverde
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = JLCS.SB.Sistema_de_Informacion_Bibliotecario\\JLCS.SB.Sistema_de_Informacion_Bibliotecario.csproj
+		SccProjectTopLevelParentUniqueName1 = JLCS.SB.sln
+		SccProjectName1 = JLCS.SB.Sistema_de_Informacion_Bibliotecario
+		SccLocalPath1 = JLCS.SB.Sistema_de_Informacion_Bibliotecario
+		SccProjectUniqueName2 = JLCS.SB.CapaNegocio\\JLCS.SB.CapaNegocio.csproj
+		SccProjectTopLevelParentUniqueName2 = JLCS.SB.sln
+		SccProjectName2 = JLCS.SB.CapaNegocio
+		SccLocalPath2 = JLCS.SB.CapaNegocio
+		SccProjectUniqueName3 = JLCS.SB.CapaEntidad\\JLCS.SB.CapaEntidad.csproj
+		SccProjectTopLevelParentUniqueName3 = JLCS.SB.sln
+		SccProjectName3 = JLCS.SB.CapaEntidad
+		SccLocalPath3 = JLCS.SB.CapaEntidad
+		SccProjectUniqueName4 = JLCS.SB.CapaDatos\\JLCS.SB.CapaDatos.csproj
+		SccProjectTopLevelParentUniqueName4 = JLCS.SB.sln
+		SccProjectName4 = JLCS.SB.CapaDatos
+		SccLocalPath4 = JLCS.SB.CapaDatos
+		SccProjectUniqueName5 = JLCS.SB.Sistema_de_Informacion_Bibliotecario_Blazor\\JLCS.SB.Sistema_de_Informacion_Bibliotecario_Blazor.csproj
+		SccProjectTopLevelParentUniqueName5 = JLCS.SB.sln
+		SccProjectName5 = JLCS.SB.Sistema_de_Informacion_Bibliotecario_Blazor
+		SccLocalPath5 = JLCS.SB.Sistema_de_Informacion_Bibliotecario_Blazor
+		SccProjectUniqueName6 = CapaNegociosTest\\CapaNegociosTest.csproj
+		SccProjectTopLevelParentUniqueName6 = JLCS.SB.sln
+		SccProjectName6 = CapaNegociosTest
+		SccLocalPath6 = CapaNegociosTest
+		SccProjectUniqueName7 = LibreriaInterfaces\\LibreriaInterfaces.csproj
+		SccProjectTopLevelParentUniqueName7 = JLCS.SB.sln
+		SccProjectName7 = LibreriaInterfaces
+		SccLocalPath7 = LibreriaInterfaces
+		SccProjectUniqueName8 = CommandInterface\\CommandInterface.csproj
+		SccProjectTopLevelParentUniqueName8 = JLCS.SB.sln
+		SccProjectName8 = CommandInterface
+		SccLocalPath8 = CommandInterface
+		SccProjectUniqueName9 = Desktop\\Desktop.csproj
+		SccProjectTopLevelParentUniqueName9 = JLCS.SB.sln
+		SccProjectName9 = Desktop
+		SccLocalPath9 = Desktop
+		SccProjectUniqueName10 = ServiciosBackground\\ServiciosBackground.csproj
+		SccProjectTopLevelParentUniqueName10 = JLCS.SB.sln
+		SccProjectName10 = ServiciosBackground
+		SccLocalPath10 = ServiciosBackground
+		SccProjectUniqueName11 = API\u0020LIbros\\API\u0020LIbros.csproj
+		SccProjectTopLevelParentUniqueName11 = JLCS.SB.sln
+		SccProjectName11 = API\u0020LIbros
+		SccLocalPath11 = API\u0020LIbros
+	EndGlobalSection
+EndGlobal

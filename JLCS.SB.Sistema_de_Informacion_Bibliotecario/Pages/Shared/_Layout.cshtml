@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+@using JLCS.SB.CapaEntidad;
+
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - "Localisation"</title>
+    <link rel="shortcut icon" href="~/icono.png">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/lib/limonte-sweetalert2/sweetalert2.min.css" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-nav border-bottom box-shadow mb-3"> 
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-page="/Index"><img src="~/LogoPLReducido.png" width="50" alt="PelucasLibrary" /></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between container-fluid">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">@Localizer.Text("Inicio")</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link text-dark btn btn-secondary dropdown-toggle bg-transparent border-0" role="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">@Localizer.Text("Archivo")</a>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <li><a class="nav-link dropdown-item" href="#">conten</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link text-dark btn btn-secondary dropdown-toggle bg-transparent border-0" role="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">@Localizer.Text("Biblioteca")</a>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <li>
+                                    <div class="bg-div">
+                                        <a class="nav-link dropdown-item text-dark disabled font-weight-bold">@Localizer.Text("Libros")</a>
+                                    </div>                                    
+                                    <ul>
+                                        <li><a class="dropdown-item">@Localizer.Text("Nuevo Libro")</a></li>
+                                        <li><a class="dropdown-item">@Localizer.Text("Consultar Libro")</a></li>
+                                        <li><a class="dropdown-item">@Localizer.Text("Editar Información de Libro")</a></li>
+                                        <li><a class="dropdown-item">@Localizer.Text("Eliminar Libro")</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <div class="bg-div">
+                                        <a class="nav-link dropdown-item text-dark disabled font-weight-bold">@Localizer.Text("Préstamos")</a>
+                                    </div>
+                                    <ul>
+                                        <li><a class="dropdown-item nav-link text-dark" asp-area="" asp-page="/PrestamoLibros/RegistrarPrestamo">@Localizer.Text("Registrar Préstamo")</a></li>
+                                        <li><a class="dropdown-item nav-link text-dark" asp-area="" asp-page="/PrestamoLibros/ConsultarPrestamo">@Localizer.Text("Consultar Préstamo")</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link text-dark dropdown-toggle" href="#" role="button" data-toggle="dropdown">@Localizer.Text("Administración")</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">conten</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Openweather/Weather">@Localizer.Text("Clima")</a>
+                        </li>
+                    </ul>
+                    <partial name="_LanguagePartial" />
+                </div>
+                
+                <vc:culture-switcher />
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <script src="~/lib/limonte-sweetalert2/sweetalert2.min.js" asp-append-version="true"></script>
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; @System.DateTime.Now.Year - JLCS.SB - @Localizer.Text("All rights reserved") - <a asp-area="" asp-page="/Privacy">@Localizer.Text("Privacidad")</a>
+</div>
+        <div class="col-md-6 text-right">
+            @*@await Html.PartialAsync("_SelectLanguagePartial")*@
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

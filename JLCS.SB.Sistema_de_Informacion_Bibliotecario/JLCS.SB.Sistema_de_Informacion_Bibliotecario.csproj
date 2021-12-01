@@ -1,0 +1,81 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <UserSecretsId>aspnet-JLCS.SB.Sistema_de_Informacion_Bibliotecario-D2CDCE82-2FE9-4E8B-9211-E9E3E7D8755B</UserSecretsId>
+    <ApplicationIcon>icono.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Pages\Configuracion\**" />
+    <Compile Remove="Rotativa\**" />
+    <Content Remove="Pages\Configuracion\**" />
+    <Content Remove="Rotativa\**" />
+    <EmbeddedResource Remove="Pages\Configuracion\**" />
+    <EmbeddedResource Remove="Rotativa\**" />
+    <None Remove="Pages\Configuracion\**" />
+    <None Remove="Rotativa\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Pages\HistorialBeneficiario\HistorialBeneficiario.cshtml" />
+    <Content Remove="Pages\PrestamoLibros\HistorialPrestamo.cshtml" />
+    <Content Remove="Pages\PrestamoLibros\prestamo.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Google.Apis.Gmail.v1" Version="1.55.0.2356" />
+    <PackageReference Include="Lamar" Version="6.0.0" />
+    <PackageReference Include="Lamar.Microsoft.DependencyInjection" Version="6.0.0" />
+    <PackageReference Include="LamarCodeGeneration" Version="3.2.2" />
+    <PackageReference Include="LazZiya.TagHelpers" Version="2.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="5.0.11" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.11" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="5.0.11" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.11">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.11" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.11">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
+    <PackageReference Include="Nancy" Version="2.0.0" />
+    <PackageReference Include="RestSharp" Version="106.13.0" />
+    <PackageReference Include="Rotativa.AspNetCore" Version="1.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\JLCS.SB.CapaEntidad\JLCS.SB.CapaEntidad.csproj" />
+    <ProjectReference Include="..\JLCS.SB.CapaNegocio\JLCS.SB.CapaNegocio.csproj" />
+    <ProjectReference Include="..\ServiciosBackground\ServiciosBackground.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Pages\HistorialBeneficiario\HistorialBeneficiario.cshtml" />
+    <None Include="Pages\PrestamoLibros\HistorialPrestamo.cshtml" />
+    <None Include="wwwroot\lib\microsoft\signalr\dist\browser\signalr.js" />
+    <None Include="wwwroot\lib\microsoft\signalr\dist\browser\signalr.min.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Recursos\ViewResource.de.resx">
+      <Generator></Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Recursos\ViewResource.en.resx">
+      <Generator></Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Recursos\ViewResource.fr.resx">
+      <Generator></Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>

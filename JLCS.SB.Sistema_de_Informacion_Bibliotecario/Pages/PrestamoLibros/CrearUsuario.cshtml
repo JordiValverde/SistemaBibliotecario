@@ -1,0 +1,154 @@
+﻿@page
+@model JLCS.SB.Sistema_de_Informacion_Bibliotecario.Pages.PrestamoLibros.CrearUsuarioModel
+@{
+    ViewData["Title"] = @Localizer.Text("Prestamos");
+    <link rel="stylesheet" href="~/css/estilo.css" />
+}
+
+<body>
+
+    <h1 class="titulo_agregar_usuario text-info text-center font-weight-light"> Agregar Usuario </h1>
+
+    <div class="border mb-5">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="container" style="padding:30px">
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <label asp-for="Usuario.TipoDocumento"></label>
+                        </div>
+                        <div class="col-sm-4">
+                            <label>
+                                <select asp-for="Usuario.TipoDocumento" class="form-control">
+                                    <option value="">@Localizer.Text("Todo")</option>
+                                    <option value="DNI">@Localizer.Text("DNI")</option>
+                                    <option value="RUC">@Localizer.Text("RUC")</option>
+                                </select>
+                            </label>                            
+                        </div>
+                        <span asp-validation-for="Usuario.TipoDocumento" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <label asp-for="Usuario.Dni">@Localizer.Text("Documento")</label>
+                        </div>
+                        <div class="col-sm-4">
+                            <input asp-for="Usuario.Dni" class="form-control" />
+                        </div>
+                        <span asp-validation-for="Usuario.Dni" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <label asp-for="Usuario.Nombre"></label>
+                        </div>
+                        <div class="col-sm-4">
+                            <input asp-for="Usuario.Nombre" class="form-control" />
+                        </div>
+                        <span asp-validation-for="Usuario.Nombre" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <label asp-for="Usuario.Apellido"></label>
+                        </div>
+                        <div class="col-sm-4">
+                            <input asp-for="Usuario.Apellido" class="form-control" />
+                        </div>
+                        <span asp-validation-for="Usuario.Apellido" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <label asp-for="Usuario.Telefono"></label>
+                        </div>
+                        <div class="col-sm-4">
+                            <input asp-for="Usuario.Telefono" class="form-control" />
+                        </div>
+                        <span asp-validation-for="Usuario.Telefono" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <label asp-for="Usuario.Direccion"></label>
+                        </div>
+                        <div class="col-sm-4">
+                            <input asp-for="Usuario.Direccion" class="form-control" />
+                        </div>
+                        <span asp-validation-for="Usuario.Direccion" class="text-danger"></span>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <label asp-for="Usuario.Barrio"></label>
+                        </div>
+                        <div class="col-sm-4">
+                            <input asp-for="Usuario.Barrio" class="form-control" />
+                        </div>
+                        <span asp-validation-for="Usuario.Barrio" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <label asp-for="Usuario.Correo"></label>
+                        </div>
+                        <div class="col-sm-4">
+                            <input asp-for="Usuario.Correo" class="form-control" />
+                        </div>
+                        <span asp-validation-for="Usuario.Correo" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-sm-2 offset-sm-2">
+                            <input type="submit" value="crear" class="btn btn-primary form-control" onclick="return created()" />
+                        </div>
+                        <div class="col-sm-2">
+                            <a asp-page="RegistrarPrestamo" class="btn btn-secondary form-control">Volver</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </form>
+    </div>
+</body>
+
+@section Scripts{
+    <partial name="_NotificationParcial" />
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function created() {
+            Swal.fire(
+                {
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'Usuario Creado',
+                    showConfirmButton: false,
+                    timer: 1500
+                }
+            )
+        }
+    </script>
+
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

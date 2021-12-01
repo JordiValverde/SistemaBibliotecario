@@ -1,0 +1,95 @@
+﻿@page
+@model JLCS.SB.Sistema_de_Informacion_Bibliotecario.Pages.Openwheater.WeatherModel
+@{
+    ViewBag.Title = "Weather";
+    <link rel="stylesheet" href="~/css/estilo.css" />
+}
+<h1 class="titulo_search text-center font-weight-bold">Search city and Get Weather Forecast</h1>
+<div>
+    <strong class="titulo_city_name">City Name : </strong>
+    <input type="text" name="City" id="txtCity" value="" />
+    <br />
+    <br />
+    <button id="btnSubmit" class="btn btn-info">Get Weather Forecast</button>
+</div>
+<div>
+    <h2 class="titulo_weather mt-3">Weather Forecast</h2>
+    <table aria-describedby="Tabla de Weather Forecast">
+        <tr>
+            <th id="clima"></th>
+        </tr>
+        <tr>
+            <td id="icon" headers="clima">
+                Weather Symbol Icon
+                <img src="@Model.tiempo.WeatherIcon" alt="Alternate Text" title="Weather Icon" />
+                @Html.DisplayFor(model => model.tiempo.WeatherIcon)
+            </td>
+        </tr>
+        <tr>
+            <td id="city" headers="clima">
+                <strong>City: </strong>
+                @Html.DisplayFor(model => model.tiempo.City)
+                @Html.DisplayFor(model => model.tiempo.Country)
+                <span id="lblCity"></span>&nbsp;&nbsp;,
+                <span id="lblCountry"></span>
+            </td>
+        </tr>
+        <tr>
+            <td id="latitude" headers="clima">
+                <strong>Latitude: </strong>
+                @Html.DisplayFor(model => model.tiempo.Lat)
+                <strong>Longitude: </strong>
+                @Html.DisplayFor(model => model.tiempo.Lon)
+            </td>
+        </tr>
+        <tr>
+            <td id="humidity" headers="clima">
+                <strong>Description: </strong>
+                @Html.DisplayFor(model => model.tiempo.Description)<br />
+                <strong>Humidity: </strong>
+                @Html.DisplayFor(model => model.tiempo.Humidity)
+            </td>
+        </tr>
+        <tr>
+            <td id="temperature" headers="clima">
+                Temperature (Feels Like)@Html.DisplayFor(model => model.tiempo.TempFeelsLike)°<br />
+                Temperature @Html.DisplayFor(model => model.tiempo.Temp)°<br />
+                Temperature (min)@Html.DisplayFor(model => model.tiempo.TempMin)°<br />
+                Temperature (max)@Html.DisplayFor(model => model.tiempo.TempMax)°<br />
+            </td>
+        </tr>
+
+    </table>
+</div>
+<script>
+    $("#btnSubmit").click(function () {
+        var cityname = $("#txtCity").val();
+        if (cityname.length > 0) {
+            $.ajax({
+                url: "http://localhost:52189/Openweather/Weather?City=" + cityname,
+                type: "POST",
+                succes: function (rsltval) {
+                    var data = JSON.parse(rsltval);
+                    console.log(data);
+                    $("#lblCity").html(data.City);
+                    $("#lblCountry").text(data.Country);
+                    $("#lblLat").text(data.Lat);
+                    $("#lblLon").text(data.Lon);
+                    $("#lblDescription").text(data.Description);
+                    $("#lblHumidity").text(data.Humidity);
+                    $("#lblTempFeelsLike").text(data.TempFeelsLike);
+                    $("#lblTemp").text(data.Temp);
+                    $("#lblTempMax").text(data.TempMax);
+                    $("#lblTempMin").text(data.TempMin);
+                    $("#imgWeatherIconUrl").attr("src",
+                        "http://openweathermap.org/img/w/" + data.WeatherIcon + ".png");
+                },
+                error: function () {
+
+                }
+            });
+        } else {
+            alert("City not Found");
+        }
+    });
+</script>

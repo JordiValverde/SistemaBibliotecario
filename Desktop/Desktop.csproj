@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ApplicationIcon>icono.ico</ApplicationIcon>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\JLCS.SB.CapaDatos\JLCS.SB.CapaDatos.csproj" />
+    <ProjectReference Include="..\JLCS.SB.CapaEntidad\JLCS.SB.CapaEntidad.csproj" />
+    <ProjectReference Include="..\JLCS.SB.Sistema_de_Informacion_Bibliotecario\JLCS.SB.Sistema_de_Informacion_Bibliotecario.csproj" />
+  </ItemGroup>
+
+</Project>

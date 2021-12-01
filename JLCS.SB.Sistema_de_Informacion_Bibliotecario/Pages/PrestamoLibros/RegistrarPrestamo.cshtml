@@ -1,0 +1,267 @@
+﻿@page
+@using JLCS.SB.CapaEntidad
+@model JLCS.SB.Sistema_de_Informacion_Bibliotecario.Pages.PrestamoLibros.RegistrarPrestamoModel
+@{
+    ViewData["Title"] = @Localizer.Text("Registrar Préstamo");
+    //sweetAlert
+    <link rel="stylesheet" href="~/lib/limonte-sweetalert2/sweetalert2.min.css" />
+    <link rel="stylesheet" href="~/css/estilo.css"/>
+}
+
+    <div>
+        <h1 Class="title1 text-center text-primary font-weight-bold">@Localizer.Text("REGISTRO DE PRESTAMOS")</h1>
+    </div>
+    <div class="py-3 mb-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="list-group">
+                        <h1 class="titulo_usuarios list-group-item list-group-item-action active text-info bg-white text-center text-uppercase"> @Localizer.Text("Usuarios") </h1>
+                        <br>
+                        <form class="form">
+                            <div class="input-group row">
+                                <div class="col-7">
+                                    <p>
+                                        <input type="text" asp-for="SearchString" placeholder=@Localizer.Text("Nombre") />
+                                        <input type="submit" value=@Localizer.Text("Filtrar") />
+                                    </p>
+                                </div>
+                                <div class="col-5 text-lg-right">
+                                    <a asp-page="CrearUsuario" class="btn btn-primary">@Localizer.Text("Agregar Usuario")</a>
+                                </div>
+
+                            </div>
+                        </form>
+
+                    </div>
+                    <form method="post">
+
+                        @if (Model.Usuario.Count() > 0)
+                        {
+                            <table class="table" aria-describedby=@Localizer.Text("tabla de usuarios")>
+                                <thead class="titulo_cabecera_usuarios text-xl-center">
+                                    <tr>
+                                        <th scope="col">
+                                            @Localizer.Text(@Html.DisplayNameFor(model => model.Usuario.FirstOrDefault().IdUsuario))
+                                        </th>
+                                        <th scope="col">
+                                            @Localizer.Text(@Html.DisplayNameFor(model => model.Usuario.FirstOrDefault().TipoDocumento))
+                                        </th>
+                                        <th scope="col">
+                                            @Localizer.Text(@Html.DisplayNameFor(model => model.Usuario.FirstOrDefault().Nombre))
+                                        </th>
+                                        <th scope="col">
+                                            @Localizer.Text(@Html.DisplayNameFor(model => model.Usuario.FirstOrDefault().Apellido))
+                                        </th>
+                                        <th scope="col">
+                                            @Localizer.Text(@Html.DisplayNameFor(model => model.Usuario.FirstOrDefault().Telefono))
+                                        </th>
+                                        <th scope="col">
+                                            @Localizer.Text(@Html.DisplayNameFor(model => model.Usuario.FirstOrDefault().Direccion))
+                                        </th>
+                                        <th scope="col">
+                                            @Localizer.Text(@Html.DisplayNameFor(model => model.Usuario.FirstOrDefault().Correo))
+                                        </th>
+                                        <th>
+                                            @Localizer.Text("Acciones")
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody class="text-xl-center">
+                                    @foreach (var item in Model.Usuario)
+                                    {
+                                        <tr>
+                                            <th scope="row">
+                                                @Html.DisplayFor(model => item.IdUsuario)
+                                            </th>
+                                            <td>
+                                                @Html.DisplayFor(model => item.TipoDocumento)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(model => item.Nombre)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(model => item.Apellido)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(model => item.Telefono)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(model => item.Direccion)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(model => item.Correo)
+                                            </td>
+                                            <td>
+                                                <a asp-route-id="@item.IdUsuario" asp-page="EditarUsuario" class="btn btn-info btn-sm">@Localizer.Text("Editar")</a> |
+                                                <button asp-page-handler="Delete" asp-route-id="@item.IdUsuario" onclick="return deleted()" class="btn btn-secondary btn-sm">@Localizer.Text("Borrar")</button>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        }
+                        else
+                        {
+                    <p>@Localizer.Text("No Existen Usuarios registrados actualmente")</p>
+                        }
+                    </form>
+                    <br />
+
+                    <div class="list-group">
+                        <h1 href="#" class="titulo_libros list-group-item list-group-item-action active text-info bg-white text-center text-uppercase" contenteditable="false"> @Localizer.Text("Libros") </h1>
+                        <br />
+                        <form class="form">
+                            <div class="input-group row">
+                                <div class="col-7">
+                                    <p>
+                                        <input type="text" asp-for="SearchString" placeholder=@Localizer.Text("Titulo") />
+                                        <input type="submit" value=@Localizer.Text("Filtrar") />
+                                    </p>
+                                </div>
+                                <div class="col-5 text-lg-right">
+                                    <a asp-page="CrearLibro" class="btn btn-primary">@Localizer.Text("Agregar Libro")</a>
+                                </div>
+
+                            </div>
+                        </form>
+
+                    </div>
+                    <form method="post">
+                        @if (Model.Libro.Count() > 0)
+                        {
+                            <table class="table" aria-describedby=@Localizer.Text("tabla de libros")>
+                                <thead class="titulo_cabecera_libros text-xl-center">
+                                    <tr>
+                                        <th scope="col">
+                                            @Localizer.Text(@Html.DisplayNameFor(model => model.Libro.FirstOrDefault().IdLibro))
+                                        </th>
+                                        <th scope="col">
+                                            @Localizer.Text(@Html.DisplayNameFor(model => model.Libro.FirstOrDefault().Titulo))
+                                        </th>
+                                        <th scope="col">
+                                            @Localizer.Text(@Html.DisplayNameFor(model => model.Libro.FirstOrDefault().Tema))
+                                        </th>
+                                        <th scope="col">
+                                            @Localizer.Text(@Html.DisplayNameFor(model => model.Libro.FirstOrDefault().NumeroEjemplares))
+                                        </th>
+                                        <th scope="col">
+                                            @Localizer.Text(@Html.DisplayNameFor(model => model.Libro.FirstOrDefault().Autor))
+                                        </th>
+                                        <th scope="col">
+                                            @Localizer.Text(@Html.DisplayNameFor(model => model.Libro.FirstOrDefault().Categoria))
+                                        </th>
+                                        <th scope="col">
+                                            @Localizer.Text(@Html.DisplayNameFor(model => model.Libro.FirstOrDefault().Estante))
+                                        </th>
+                                        <th scope="col">
+                                            @Localizer.Text(@Html.DisplayNameFor(model => model.Libro.FirstOrDefault().Casillero))
+                                        </th>
+                                        <th scope="col">
+                                            @Localizer.Text(@Html.DisplayNameFor(model => model.Libro.FirstOrDefault().Tipo))
+                                        </th>
+                                        <th scope="col">
+                                            @Localizer.Text(@Html.DisplayNameFor(model => model.Libro.FirstOrDefault().Observacion))
+                                        </th>
+                                        <th>
+                                            @Localizer.Text("Acciones")
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody class="text-xl-center">
+                                    @foreach (var item in Model.Libro)
+                                    {
+                                        <tr>
+                                            <th scope="row">
+                                                @Html.DisplayFor(model => item.IdLibro)
+                                            </th>
+                                            <td>
+                                                @Html.DisplayFor(model => item.Titulo)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(model => item.Tema)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(model => item.NumeroEjemplares)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(model => item.Autor)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(model => item.Categoria)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(model => item.Estante)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(model => item.Casillero)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(model => item.Tipo)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(model => item.Observacion)
+                                            </td>
+                                            <td>
+                                                <a asp-route-id="@item.IdLibro" asp-page="EditarLibro" class="btn btn-info btn-sm mb-1">@Localizer.Text("Editar")</a>
+                                                <button asp-page-handler="Delete" asp-route-id="@item.IdLibro" onclick="return deleted()" class="btn btn-secondary btn-sm">@Localizer.Text("Borrar")</button>
+
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        }
+                        else
+                        {
+                    <p>@Localizer.Text("No hay libros en existencia")</p>
+                        }
+                        <br />
+                    </form>
+                    <!--sweetAler-->
+                    <script src="~/lib/limonte-sweetalert2/sweetalert2.min.js" asp-append-version="true"></script>
+                    <!---->
+                    <a class="btn btn-primary" href="#">@Localizer.Text("REGISTRAR")</a>
+                    <a class="btn btn-secondary" href="#">@Localizer.Text("CANCELAR")</a>
+                    <a class="btn btn-info" href="/PrestamoLibros/HistorialPrestamo">@Localizer.Text("HISTORIAL")</a>
+</div>
+            </div>
+        </div>
+    </div>
+    <div class="modal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">@Localizer.Text("¿DESEA Sancionar al Usuario ?")</h5> <button type="button" class="close" data-dismiss="modal"> <span>×</span> </button>
+                </div>
+                <div class="modal-footer"> <button type="button" class="btn btn-primary">@Localizer.Text("SI")</button> <button type="button" class="btn btn - secondary" data-dismiss="modal">@Localizer.Text("NO")</button> </div>
+            </div>
+        </div>
+    </div>
+
+    @section Scripts{
+        <partial name="_NotificationParcial" />
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+        <script>
+            function deleted() {
+                Swal.fire({
+                    title: 'Estás seguro?',
+                    text: "No hay vuelta atras!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Yes, delete it!'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        Swal.fire(
+                            'Deleted!',
+                            'Your file has been deleted.',
+                            'success'
+                        )
+                    }
+                })
+            }
+        </script>
+    }

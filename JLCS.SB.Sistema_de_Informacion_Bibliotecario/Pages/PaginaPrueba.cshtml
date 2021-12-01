@@ -1,0 +1,94 @@
+﻿@page
+@using JLCS.SB.CapaNegocio;
+@using JLCS.SB.CapaEntidad;
+@model UsuarioEntidad;
+@{
+    //public UsuarioEntidad Usuario = new UsuarioEntidad()
+    //{
+    //TipoDocumento = "DNI",
+    //Nombre = "El Peluca",
+    //Apellido = "Cuadros Reyes",
+    //FechaIngreso = DateTime.Now,
+    //Barrio = "San Cristobal",
+    //Direccion = "Jr. Las Peras 304",
+    //Telefono = 921345876,
+    //Correo = "Correo@correo.com"
+    //};
+    UsuarioLogica _UsuarioLogica = new UsuarioLogica();
+    var Usuarios = _UsuarioLogica.ObtenerUsuarios();
+}
+
+<table class="table" aria-describedby="tabla de usuarios">
+    <thead>
+        <tr>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.Apellido)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.Direccion)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.Telefono)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.Barrio)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.Correo)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.FechaIngreso)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.TipoDocumento)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.IdUsuario)
+            </th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Usuarios)
+        {
+            <tr>
+                <td>
+                    @item.Nombre
+                </td>
+                <td>
+                    @item.Apellido
+                </td>
+                <td>
+                    @item.Direccion
+                </td>
+                <td>
+                    @item.Telefono
+                </td>
+                <td>
+                    @item.Barrio
+                </td>
+                <td>
+                    @item.Correo
+                </td>
+                <td>
+                    @item.FechaIngreso
+                </td>
+                <td>
+                    <label class="control-label">Estado</label>
+                    @item.TipoDocumento
+                </td>
+                <td>
+                    @item.IdUsuario
+                </td>
+                <td scope="row">
+                    <a asp-action="Edit" asp-route-id="@item.IdUsuario">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.IdUsuario">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.IdUsuario">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

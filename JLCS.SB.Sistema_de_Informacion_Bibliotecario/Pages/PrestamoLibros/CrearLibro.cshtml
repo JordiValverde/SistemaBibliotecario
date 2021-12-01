@@ -1,0 +1,160 @@
+﻿@page
+@model JLCS.SB.Sistema_de_Informacion_Bibliotecario.Pages.PrestamoLibros.CrearLibroModel
+@{
+    <link rel="stylesheet" href="~/css/estilo.css" />
+}
+
+<body>
+
+    <h1 class="titulo_agregar_libro text-info text-center font-weight-light"> Agregar Libro </h1>
+
+
+    <div class="border mb-5">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="container" style="padding:30px">
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <label asp-for="Libro.Titulo"></label>
+                        </div>
+                        <div class="col-sm-4">
+                            <input asp-for="Libro.Titulo" class="form-control" />
+                        </div>
+                        <span asp-validation-for="Libro.Titulo" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <label asp-for="Libro.Tema"></label>
+                        </div>
+                        <div class="col-sm-4">
+                            <input asp-for="Libro.Tema" class="form-control" />
+                        </div>
+                        <span asp-validation-for="Libro.Tema" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <label asp-for="Libro.NumeroEjemplares"></label>
+                        </div>
+                        <div class="col-sm-4">
+                            <input asp-for="Libro.NumeroEjemplares" class="form-control" />
+                        </div>
+                        <span asp-validation-for="Libro.NumeroEjemplares" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <label asp-for="Libro.Autor"></label>
+                        </div>
+                        <div class="col-sm-4">
+                            <input asp-for="Libro.Autor" class="form-control" />
+                        </div>
+                        <span asp-validation-for="Libro.Autor" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <label asp-for="Libro.Categoria"></label>
+                        </div>
+                        <div class="col-sm-4">
+                            <input asp-for="Libro.Categoria" class="form-control" />
+                        </div>
+                        <span asp-validation-for="Libro.Categoria" class="text-danger"></span>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <label asp-for="Libro.Estante"></label>
+                        </div>
+                        <div class="col-sm-4">
+                            <input asp-for="Libro.Estante" class="form-control" />
+                        </div>
+                        <span asp-validation-for="Libro.Estante" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <label asp-for="Libro.Casillero"></label>
+                        </div>
+                        <div class="col-sm-4">
+                            <input asp-for="Libro.Casillero" class="form-control" />
+                        </div>
+                        <span asp-validation-for="Libro.Casillero" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <label asp-for="Libro.Tipo"></label>
+                        </div>
+                        <div class="col-sm-4">
+                            <input asp-for="Libro.Tipo" class="form-control" />
+                        </div>
+                        <span asp-validation-for="Libro.Tipo" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <label asp-for="Libro.Observacion"></label>
+                        </div>
+                        <div class="col-sm-4">
+                            <input asp-for="Libro.Observacion" class="form-control" />
+                        </div>
+                        <span asp-validation-for="Libro.Observacion" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-sm-2 offset-sm-2">
+                            <input type="submit" value="crear" onclick="return created()" class="btn btn-primary form-control" />
+                        </div>
+                        <div class="col-sm-2">
+                            <a asp-page="RegistrarPrestamo" class="btn btn-secondary form-control">Volver</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </form>
+    </div>
+</body>
+
+@section Scripts{
+    <partial name="_NotificationParcial" />
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function created() {
+            Swal.fire(
+                {
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'Usuario Creado',
+                    showConfirmButton: false,
+                    timer: 1500
+                }
+            )
+        }
+    </script>
+
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

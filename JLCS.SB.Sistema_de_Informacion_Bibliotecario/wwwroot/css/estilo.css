@@ -1,0 +1,23 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
+#map {
+    height: 300px;
+    width: 100%;
+}
+
+.title1, .titulo_libros, .titulo_usuarios, .titulo_cabecera_libros, .titulo_cabecera_usuarios, .titulo_search {
+    font-family: 'Dancing Script', 'cursive';
+}
+
+.titulo_cabecera_libros, .titulo_cabecera_usuarios {
+    font-size: 20px;
+}
+
+.titulo_editar_libro, .titulo_agregar_libro, .titulo_agregar_usuario, .titulo_editar_usuario, .titulo_weather {
+    font-family: 'Dancing Script', 'cursive';
+    font-size: 50px;
+}
+.titulo_city_name {
+    font-family: 'Dancing Script', 'cursive';
+    font-size: 30px;
+}

@@ -1,0 +1,146 @@
+﻿@page
+
+@model JLCS.SB.Sistema_de_Informacion_Bibliotecario.Pages.PrestamoLibros.ConsultarPrestamoModel
+
+
+@{
+    ViewData["Title"] = @Localizer.Text("Prestamos");
+    //sweetAlert
+    <link rel="stylesheet" href="~/lib/limonte-sweetalert2/sweetalert2.min.css" />
+    <link rel="stylesheet" href="~/css/estilo.css" />
+    
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="list-group">
+            <h1 class="title1 text-center text-primary font-weight-bold"> @Localizer.Text("PRESTAMISTAS") </h1>
+            <h1 class="titulo_usuarios list-group-item list-group-item-action active text-info bg-white text-center text-uppercase"> @Localizer.Text("Usuarios") </h1>
+            <br>
+            <form class="form-row">
+                <div class="input-group row">
+                    <div class="col-7">
+                        <p>
+                            <select asp-for="TipoDocumento" asp-items="Model.TipoDocumentos" onchange="this.form.submit();">
+                                <option value="">@Localizer.Text("Todo")</option>
+                            </select><input type="text" asp-for="SearchString" placeholder="0" />
+                            <input class="btn btn-primary" type="submit" value=@Localizer.Text("Filtrar") />
+                        </p>
+                    </div>
+                </div>
+            </form>
+            </a>
+        </div>
+        <table class="table" aria-describedby=@Localizer.Text("Tabla de prestamos")>
+            <thead class="titulo_cabecera_usuarios text-xl-center">
+                <tr>
+                    <th scope="col">
+                        @Localizer.Text(@Html.DisplayNameFor(model => model.Usuarios[0].IdUsuario))
+                    </th>
+                    <th scope="col">
+                        @Localizer.Text(@Html.DisplayNameFor(model => model.Usuarios[0].TipoDocumento))
+                    </th>
+                    <th scope="col">
+                        @Localizer.Text("Número de Documento")
+                    </th>
+                    <th scope="col">
+                        @Localizer.Text(@Html.DisplayNameFor(model => model.Usuarios[0].Nombre))
+                    </th>
+                    <th scope="col">
+                        @Localizer.Text(@Html.DisplayNameFor(model => model.Usuarios[0].Apellido))
+                    </th>
+                    <th scope="col">
+                        @Localizer.Text(@Html.DisplayNameFor(model => model.Usuarios[0].Telefono))
+                    </th>
+                    <th scope="col">
+                        @Localizer.Text(@Html.DisplayNameFor(model => model.Usuarios[0].Direccion))
+                    </th>
+                    <th scope="col">
+                        @Localizer.Text(@Html.DisplayNameFor(model => model.Usuarios[0].Correo))
+                    </th>
+                    <th>
+                        @Localizer.Text("Acciones")
+                    </th>
+                </tr>
+            </thead>
+            <tbody class="text-center">
+                @foreach (var item in Model.Usuarios)
+                {
+                    bool Verificador = false;
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.IdUsuario)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TipoDocumento)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Dni)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Nombre)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Apellido)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Telefono)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Direccion)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Correo)
+                        </td>
+                        <td>
+                            <form method="post">
+                                <div class="form-group">
+                                    <input asp-for="Sancion.IdUsuario" class="form-control" type="hidden" value="@item.IdUsuario" />
+                                    <span asp-validation-for="Sancion.IdUsuario" class="text-danger"></span>
+                                </div>
+                                @foreach (var item2 in Model.Sanciones)
+                                {
+                                    if (item.IdUsuario == item2.IdUsuario)
+                                    {
+                                        Verificador = false;
+                                        break;
+                                    }else if (item2 == null)
+                                    {
+                                        break;
+                                    }
+                                }
+                                @if (Verificador)
+                                {
+                                    <input type="submit" class="btn btn-primary btn-sm" value=@Localizer.Text("Sancionar") onclick="return confirm('Desea sancionar a @item.Nombre ?')" />
+                                }
+                                else
+                                {
+                                    <input type="button" class="btn disabled btn-primary btn-sm" value=@Localizer.Text("Sancionado") />
+                                }
+                                |
+                            </form>
+                            <a asp-page="./DetallePrestamo" class="btn btn-secondary btn-sm bg-primary" asp-route-id="item.IdUsuario">@Localizer.Text("Detalles")</a> |
+                            <a asp-page="./Delete" class="btn btn-info btn-sm" asp-route-id="item.IdUsuario">@Localizer.Text("Eliminar")</a>
+                        </td>
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <br />
+        <!--sweetAler-->
+        <script src="~/lib/limonte-sweetalert2/sweetalert2.min.js" asp-append-version="true"></script>
+        <!---->
+    </div>
+</div>
+<div class="modal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">¿DESEA Sancionar al Usuario?</h5> <button type="button" class="close" data-dismiss="modal"> <span>×</span> </button>
+            </div>
+            <div class="modal-footer"> <button type="button" class="btn btn-primary">@Localizer.Text("SI")</button> <button type="button" class="btn btn - secondary" data-dismiss="modal">@Localizer.Text("NO")</button> </div>
+        </div>
+    </div>
+</div>
